@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+		<p><img src='{{og if og != None}}' class="left"></p>
+
+		{% if email %}
+ 			<p style="color: grey">Contact the photographer by email for purchase: {{ email }}</p>
+ 		{% endif %}
+
+ 		{% if attributes %}
+		<div style="padding-left: 60%">
+ 			<h1 style="color: grey">Editing Options</h1>
+ 		</div>
+ 		<div style="padding-left: 57%">
+ 			<form action="{{url_for('superres', id=id)}}" method="get" class="pure-form">
+            <input class="pure-button pure-input-1-2 pure-button-primary" style="color:white; text-align: center;" type="submit" value="Make it high Resolution" />
+        </form>
+ 		</div>
+ 		<div style="padding-left: 57%">
+ 			<form action="{{url_for('delete', id=id)}}" method="get" class="pure-form">
+            <input class="pure-button pure-input-1-2 pure-button-primary" style="color:white; text-align: center;" type="submit" value="Delete Image" />
+        </form>
+ 		</div>
+		<h4 style="color: grey; padding-left: 10%; padding-top: 20%">Tags:
+
+			{% for attr in attributes %}
+               {{ attr  + ', '}}
+    		{% endfor %}
+
+		{% endif %}
+</h4>
+		 			
+{% endblock %}

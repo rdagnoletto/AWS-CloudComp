@@ -1,0 +1,15 @@
+{
+    "devimg2": {
+       "project_name": "cloudbusterslambda",
+       "keep_warm": false,
+       "debug": true,
+       "log_level": "DEBUG",
+       "s3_bucket": "cloudbusters1",
+       "app_function": "app.webapp",
+       "http_methods": ["GET","POST"],
+       "parameter_depth": 1,
+       "timeout_seconds": 300,
+       "memory_size": 512,
+       "use_precompiled_packages": true
+    }
+}

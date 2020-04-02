@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="module darken form-box">
+            <div class="l-box">
+                <h2>Beautiful, High-Resolution Photos</h2>
+
+
+                <form action="{{url_for('search')}}" method="post" class="pure-form" novalidate>
+                    {{ form.hidden_tag() }}
+                        {{ form.search_term(class="pure-input-1-2", placeholder="Let your search begin....") }}
+                        {% for error in form.search_term.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        {{ form.submit(class="pure-button", style="padding-top:1.4%") }}
+                </form>
+
+            <!--     <form class="pure-form">
+                    <input type="text"  placeholder="Let your search begin...." required>
+                    <button type="submit" class="pure-button">Search</button>
+                </form> -->
+            </div>
+        </div>
+    <div class="pure-g">
+
+
+{% if images %}
+    {% for path,info in images %}
+            <div class="photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+
+                {% if info.1  %}
+                <a href="{{url_for('displaywm',user_id=info.1, im_id=path) }}" title='match_score={{ info.0 }}'><img src='{{ s3_loc + "w_"+ path }}'></a>
+                {% else %}
+                <a href="{{url_for('displaywm',im_id=path) }}" title='match_score={{ info.0 }}'><img src='{{ s3_loc + "w_"+ path }}'></a>
+                {% endif %}
+            </div>
+    {% endfor %}
+{% endif %}
+
+</div>
+
+
+
+
+   <!--  <div class="footer">
+        View the source of this layout to learn more. Made with love by the YUI Team.
+    </div>
+</div> -->
+
+
+
+{% endblock %}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />   <!-- Required meta tags -->
+    <meta charset="utf-8">
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+
+    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <!--<![endif]-->
+
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/gallery-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='gallery.css') }}">
+
+   <title>C-Pics &ndash;  &ndash; </title>
+<!--       <div>
+        {% if current_user.is_authenticated %}
+        Currently logged in as {{ current_user.username }}
+        <form action="{{url_for('user_logout')}}" method="get">
+            <input type="submit" value="Logout" />
+        </form>
+        {% endif %} -->
+
+    </head>
+    <body>
+
+
+
+    <div class="header">
+        <div class="pure-menu pure-menu-horizontal">
+<!--           <a class="navbar-brand mr-4" href="{{url_for('images_view')}}">Face Detection App</a> -->
+
+         <a class="pure-menu-heading" href="" style="color: white">Cpics.ai</a>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="{{url_for('home')}}" class="pure-menu-link" >Home</a></li>
+
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
+               <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" id="menuLink1" class="pure-menu-link">Categories</a>
+            <ul class="pure-menu-children">
+                <li class="pure-menu-item"><a href="{{url_for('gallery', search_term='Cars')}}" class="pure-menu-link">Cars</a></li>
+                <li class="pure-menu-item"><a href="{{url_for('gallery', search_term='Flowers')}}" class="pure-menu-link">Flowers</a></li>
+                <li class="pure-menu-item"><a href="{{url_for('gallery', search_term='Architecture')}}" class="pure-menu-link">Architecture</a></li>
+                <li class="pure-menu-item"><a href="{{url_for('gallery', search_term='Food')}}" class="pure-menu-link">Food</a></li>
+                <li class="pure-menu-item"><a href="{{url_for('gallery', search_term='Animals')}}" class="pure-menu-link">Animals</a></li>
+                <li class="pure-menu-item"><a href="{{url_for('gallery', search_term='Football')}}" class="pure-menu-link">Football</a></li>
+            </ul>
+        </li>
+        {% if current_user.is_authenticated %}
+                <li class="pure-menu-item"><a href="{{url_for('images_view')}}" class="pure-menu-link">My Gallery</a></li>
+                <li class="pure-menu-item"><a href="{{url_for('new_image')}}" class="pure-menu-link right">Upload</a></li>
+                <li class="pure-menu-item" ><a href="{{url_for('user_logout')}}" class="pure-menu-link" >Logout</a></li>
+                {% else %}
+                <li class="pure-menu-item"><a href="{{url_for('user_login')}}" class="pure-menu-link" >Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <div class="error">{{error_msg if error_msg != None}}</div>
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          <ul class=flashes>
+          {% for message in messages %}
+              <p>{{ message }}</p>
+          {% endfor %}
+          </ul>
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

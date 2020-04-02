@@ -1,0 +1,234 @@
+body {
+    color: white;
+}
+
+h1,h3,h4,h5,h6 {
+    color: white;
+}
+
+h2{ color: white }
+
+.l-box {
+    padding: 2em;
+}
+
+.header .pure-menu {
+    border-bottom-color: black;
+    border-radius: 0;
+    background-color:  #444443
+}
+
+.pure-menu-link {
+    padding: 1em ;
+    color: grey
+}
+
+.photo-box, .text-box {
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+    text-align: left;
+    font-size: 30px;
+    color: #FFFFFF;
+    font-family: "Lucida Console", serif;
+     
+
+    
+}
+
+
+.photo-box-thin {
+    height: 120px;
+}
+
+
+    .photo-box img {
+        max-width: 98%;
+        height: auto;
+        min-height: 250px;
+        padding: 0.5em;
+        
+        }
+
+
+    .photo-box aside {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 1em 0.5em;
+        color: white;
+        width: 100%;
+        font-size: 80%;
+        text-align: center;
+    }
+
+    .photo-box aside span {
+        color: #aaa;
+    }
+
+        .photo-box aside span a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+.text-box {
+    background: rgb(49, 49, 49); /* bluish grey */
+    color: rgb(255, 190, 94); /* steel blue */
+}
+
+    .text-box-head {
+        color: #fff;
+        padding-bottom: 0.2em;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 24px;
+    }
+
+    .text-box-subhead {
+        font-weight: normal;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+.form-box {
+    text-align: center;
+    font-size: 120%;
+    border-bottom: 1px solid #eee;
+}
+
+    .form-box .pure-button {
+        background-color: #61B842;
+        color: white;
+        vertical-align: top;
+        font-size: 85%;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-radius: 4px;
+        margin: 0.1em;
+
+    }
+    .pure-form input[type] {
+        margin: 0.3em auto;
+        text-align: left;
+        color: grey
+        
+    }
+
+.footer {
+    background: #111;
+    color: #666;
+    text-align: center;
+    padding: 1em;
+    font-size: 80%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.module {
+  
+  background: url(2.jpg);
+  background-size: auto;
+}
+.darken {
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(2.jpg);
+}
+
+
+ 
+
+ ul li ul.dropdown{
+        min-width: 75%; /* Set width of the dropdown */
+        background: #f2f2f2;
+        display: none;
+        position: absolute;
+        
+        
+    }
+    ul li:hover ul.dropdown{
+        display: block; /* Display the dropdown */
+    }
+    ul li ul.dropdown li{
+        display: block;
+    }
+
+
+.mod2 {
+  
+  background: url(3.jpg);
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.dark2 {
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(3.jpg);
+}
+div.middle{
+    height: 40%;
+    width: 40%;
+    position: absolute;
+    top:30%;
+    left: 40%;
+    }
+
+ div.middle2{
+    height: 40%;
+    width: 70%;
+    position: absolute;
+    top:47%;
+    left: 41%;
+    }
+
+div.frmfnt
+{
+    font-size: 20px;
+    color: grey;
+    font-family: "Lucida Console", serif;
+}
+
+body.login {
+  background-image: url(69.jpg);
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+}
+img.left {
+ float: left;
+ padding: 40px 0px 0px 50px;
+ width: 40%;
+ height: 40%;
+ max-height: 350px;
+}
+
+
+img.right {
+ float: right;
+ padding: 40px 50px 0px 0px;
+ width: 40%;
+ height: 40%;
+ max-height: 350px;
+ }
+
+div.middle3{
+    height: 20%;
+    width: 50%;
+    position: absolute;
+    top:75%;
+    left: 42%;
+    }

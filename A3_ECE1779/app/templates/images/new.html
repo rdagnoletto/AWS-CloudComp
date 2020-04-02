@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<body class="conatiner login">
+<h1 style="padding:2% 40%">Upload Images</h1>
+    <div class="middle">
+    <form action="{{url_for('new_image')}}" method="post" class="pure-form" enctype="multipart/form-data" novalidate>
+        {{ form.hidden_tag() }}
+        
+            {{ form.image_file.label(style="color:white") }}: {{ form.image_file (class="pure-input-1-2 ")}}<br>
+            {% for error in form.image_file.errors %}
+            <span style="color: red;">[{{ error }}]</span><br>
+            {% endfor %}
+        
+        {{ form.submit(class="pure-button pure-input-1-4 pure-button-primary",style="color:white") }}
+    </form>
+    <form action="{{url_for('images_view',id=id)}}" class="pure-form" method="get">
+        <input class="pure-button pure-input-1-4 pure-button-primary"style="color:white" type="submit" value="Back" />
+    </form>
+</div>
+</body>
+{% endblock %}

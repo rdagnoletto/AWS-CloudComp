@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<body class="conatiner login">
+    <h1 style="padding:5% 43%">Login Here</h1>
+    <div class="middle">
+        <form action="{{url_for('user_login')}}" class= "pure-form"method="post" novalidate>
+        {{ form.hidden_tag() }}
+        
+            {{ form.username.label() }}<br>
+            {{ form.username(size=32, class="pure-input-1-2", placeholder="Username") }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span><br>
+            {% endfor %}
+        
+        
+            {{ form.password.label () }}<br>
+            {{ form.password(size=32, class="pure-input-1-2",placeholder="Password") }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span><br>
+            {% endfor %}
+        
+            {{ form.submit(class="pure-button pure-input-1-4 pure-button-primary",style="color:white; text-align: center") }}
+             <input class="pure-button pure-input-1-4 pure-button-primary" style="color:white; text-align: center;" type="reset" name="Reset"><br>
+        </form>
+
+    
+        <form action="{{url_for('user_create')}}" method="get" class="pure-form">
+            <input class="pure-button pure-input-1-2 pure-button-primary" style="color:white; text-align: center;" type="submit" value="New User" />
+        </form>
+    </div>
+    </body>
+
+{% endblock %}
