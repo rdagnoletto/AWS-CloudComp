@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div>
+    	{% if images %}
+            <div class="gallery">
+
+    		{% for image in images %}
+                <a href='/face_detection/{{image.id}}'><img src='{{ url_for("download_file", folder="originals",  image_name=image.file_name) }}' class="thumbnail"></a>
+    		{% endfor %}
+            </div>
+    	{% else %}
+        <div class="middle">
+    		<p>No images have been uploaded for {{ current_user.username }}.
+                <div>
+                 <form action="{{url_for('new_image')}}" method="get">
+                    <input type="submit" value="Upload New Images" />
+                 </form>
+                </div>
+             Click "Upload New Images". </p>
+         </div>
+  		{% endif %}
+
+    </div>
+
+
+{% endblock %}

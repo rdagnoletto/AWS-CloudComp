@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="middle">
+    <form action="" method="post" enctype="multipart/form-data" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.image_file.label }}: {{ form.image_file }}<br>
+            {% for error in form.image_file.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <form action="{{url_for('images_view',id=id)}}" method="get">
+        <input type="submit" value="Back" />
+    </form>
+</div>
+{% endblock %}

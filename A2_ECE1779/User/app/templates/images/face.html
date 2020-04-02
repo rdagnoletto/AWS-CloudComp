@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+      
+
+<div class="row">
+	<div class="column">
+		<img src='{{og if og != None}}'>
+ 		<!-- <div class="desc">Original</div> -->
+	</div>
+	<div class="column">
+		<img src='{{face if face != None}}'>
+
+		<!-- <div class="desc">Face Dtetcted</div> -->
+	</div>
+</div>
+
+<div class="row">
+	<div class="column">
+		<p class="cap">Original</p>
+	</div>
+	<div class="column">
+		<p class="cap">Face Captured image</p>
+	</div>
+</div>
+<!-- </ul> -->
+
+{% endblock %}
