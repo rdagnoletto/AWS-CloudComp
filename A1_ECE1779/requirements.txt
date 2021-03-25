@@ -25,5 +25,5 @@ six==1.12.0
 SQLAlchemy==1.2.17
 urllib3==1.24.2
 Wand==0.5.0
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 WTForms==2.2.1
