@@ -15,7 +15,7 @@ MarkupSafe==1.1.0
 mysql-connector-python==8.0.15
 mysqlclient==1.4.2
 numpy==1.16.1
-opencv-python==4.0.0.21
+opencv-python==4.1.1.26
 pathvalidate==0.24.1
 Pillow==8.1.1
 protobuf==3.6.1
